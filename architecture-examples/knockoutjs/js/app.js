@@ -12,7 +12,7 @@ Meigen.prototype.copy = function () {
     // TODO
 };
 
-function AppViewModel() {
+function AppViewModel(meigens) {
     var root = this;
 
     this.query = ko.observable("");
@@ -40,7 +40,7 @@ function AppViewModel() {
         root.query("")
             .character("")
             .sample(
-                _.chain(window.meigens)
+                _.chain(meigens)
                     .shuffle()
                     .first(3)
                     .map(function (obj) { return new Meigen(obj); })
@@ -53,7 +53,7 @@ function AppViewModel() {
             query = root.query();
 
         if (root.isSearchWorking()) {
-            return _.chain(window.meigens)
+            return _.chain(meigens)
                 .select(function (obj) { return !character || obj.character == character; })
                 .select(function (obj) {
                     return !query ||
@@ -81,7 +81,3 @@ function AppViewModel() {
     this.refresh();
 };
 
-app = new AppViewModel();
-$(function () {
-    ko.applyBindings(app);
-});
