@@ -1,0 +1,127 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+.hero-unit {
+  background: #eee url(../img/hero_background.png) top right no-repeat scroll;
+  transition: background-position 0.4s ease-out;
+  -moz-transition: background-position 0.4s ease-out;
+  -webkit-transition: background-position 0.4s ease-out;
+  -o-transition: background-position 0.4s ease-out;
+}
+
+.hero-unit:hover {
+  background-position: right -70px;
+}
+
+.hero-unit .social-widgets * {
+  vertical-align: top;
+}
+
+img.meigen {
+  width: 240px;
+  height: 320px;
+}
+
+.meigen-thumbnail .image-wrapper {
+  text-align: center;
+}
+
+.meigen-thumbnail {
+  overflow: hidden;
+  height: 440px;
+  padding-top: 15px;
+  position: relative;
+}
+
+.meigen-thumbnail .clippable-buttons {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.meigen-thumbnail .clippable-buttons button {
+  width: 100px;
+}
+
+.meigen-thumbnail .title {
+  margin: 0;
+  padding: 10px 25px 5px;
+  min-height: 3em;
+}
+
+.meigen-thumbnail .metadata {
+  margin: 0;
+  padding: 0 25px 10px;
+  position: relative;
+}
+
+.meigen-thumbnail .metadata .character {
+  position: absolute;
+  bottom: 11px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.navbar-search .search-query {
+  padding-left: 29px;
+  padding-right: 29px;
+}
+
+.navbar-search div.icon-search {
+  position: absolute;
+  top: 7px;
+  left: 11px;
+  background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
+}
+
+.navbar-search div.icon-remove {
+  position: absolute;
+  top: 7px;
+  left: 240px;
+  background-image: url("http://twitter.github.com/bootstrap/assets/img/glyphicons-halflings.png");
+  cursor: pointer;
+}
+
+.cid-facet-remove {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.hit-count {
+  margin-left: 10px;
+}
+
+.top-meigens {
+  min-height: 481px;
+}
+
+/* Copy .btn:hover in bootstrap.css for buttons used to ZeroClipboard */
+.btn.hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+  /* Buttons in IE7 don't get borders, so darken on hover */
+
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+     -moz-transition: background-position 0.1s linear;
+       -o-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer * {
+  font-size: 95%;
+}
+
+.refresh-button-row {
+  margin-bottom: 30px;
+}
