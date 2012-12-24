@@ -8,7 +8,13 @@ describe("myApp", function () {
     });
 
     it("should display 3 meigens", function () {
+      var el;
+
       expect(repeater('.thumbnails li').count()).toBe(3);
+
+      el = element(".thumbnail .metadata a", "entry");
+      expect(el.html()).toMatch(/惚れさせ\d+/);
+      expect(el.attr('href')).toMatch(/http:\/\/jigokuno.com\/\?eid=\d+/);
     });
 
     it("should display hero-unit", function () {

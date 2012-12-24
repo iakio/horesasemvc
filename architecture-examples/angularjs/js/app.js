@@ -11,9 +11,20 @@ var MeigenController = function ($scope, meigens, sampler) {
     $scope.character = "";
   };
 
-  $scope.hits = 0;
+  $scope.hits = function () {
+      return 0;
+  };
+
   $scope.isSearchWorking = function () {
     return $scope.query !== "" || $scope.character !=="";
+  };
+
+  $scope.entryUrl = function (meigen) {
+    return "http://jigokuno.com/?eid=" + meigen.eid;
+  };
+
+  $scope.found = function () {
+    return $scope.hits() > 0;
   };
 
   $scope.sample = sampler.sample($scope.meigens);

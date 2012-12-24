@@ -32,7 +32,7 @@
             {{character}}
             <i class="icon-remove icon-white"></i>
           </span>
-          <span ng-hide="!isSearchWorking()" class="badge badge-info hit-count">{{hits}}</span>
+          <span ng-hide="!isSearchWorking()" class="badge badge-info hit-count">{{hits()}}</span>
         </form>
         <!--
       {{view App.NotificationView}}
@@ -59,7 +59,7 @@
 <!-- /ko -->
 
 
-<div data-bind="visible: notFound" class="alert alert-error">
+<div ng-hide="!isSearchWorking() || found()" class="alert alert-error">
   <strong>Not found</strong> for '<strong data-bind="text: query">{{query}}</strong>'
   <!-- ko if: character -->
   of <strong data-bind="text: character">{{character}}</strong>
@@ -70,12 +70,12 @@
   <li ng-repeat="meigen in sample" class="span4">
   <div class="thumbnail meigen-thumbnail">
     <div class="clippable-buttons">
-      <button data-bind="click: copy" class="btn btn-mini">Markdown</button>
-      <button data-bind="click: copy" class="btn btn-mini">URL</button>
+      <button class="btn btn-mini">Markdown</button>
+      <button class="btn btn-mini">URL</button>
     </div>
 
     <div class="image-wrapper">
-      <a target="_blank" hg-href="{{meigen.image}}">
+      <a target="_blank" ng-href="{{meigen.image}}">
         <img class="meigen" ng-src="{{meigen.image}}">
       </a>
     </div>
@@ -83,8 +83,7 @@
 
       <p class="title">{{meigen.title}}</p>
       <p class="metadata">
-      <a target="_blank" data-bind="attr: { href : entryUrl() }">惚れさせ{{meigen.id}}
-      </a>
+      <a target="_blank" ng-href="{{entryUrl(meigen)}}">惚れさせ{{meigen.id}}</a>
       <span ng-click="selectCharacter()" class="label label-info character">
         <i class="icon-user icon-white"></i>
         {{meigen.character}}
