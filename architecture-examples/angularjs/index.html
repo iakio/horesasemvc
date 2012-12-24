@@ -66,8 +66,8 @@
   <!-- /ko -->
 </div>
 
-<ul class="thumbnails">
-  <li ng-repeat="meigen in sample" class="span4">
+
+<script type="text/ng-template" id="meigen_tmpl">
   <div class="thumbnail meigen-thumbnail">
     <div class="clippable-buttons">
       <button class="btn btn-mini">Markdown</button>
@@ -91,6 +91,11 @@
       </p>
     </div>
   </div>
+</script>
+
+
+<ul class="thumbnails">
+  <li ng-repeat="meigen in sample" ng-include="'meigen_tmpl'" class="span4">
   </li>
 </ul>
 
